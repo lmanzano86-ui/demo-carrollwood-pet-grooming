@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrollwood Pet Grooming — Peluquería Canina y Felina en Tampa</title>
+<style>
+:root{
+  --crema:#FFF9F2; --terra:#D96C4A; --terra-d:#B95535; --teal:#14655F; --teal-d:#0E4A46;
+  --choco:#3B2F2A; --dorado:#E8A93D; --blanco:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:ui-rounded,"SF Pro Rounded","Trebuchet MS","Segoe UI",Verdana,sans-serif;background:var(--crema);color:var(--choco);max-width:640px;margin:0 auto;line-height:1.55}
+img{max-width:100%;display:block}
+/* ===== header ===== */
+header{position:sticky;top:0;z-index:50;background:var(--blanco);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;box-shadow:0 2px 10px rgba(59,47,42,.12)}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:15px;color:var(--teal);line-height:1.2}
+.brand svg{width:30px;height:30px;flex:0 0 30px}
+.langbtns{display:flex;gap:6px;flex:0 0 auto}
+.langbtns button{border:2px solid var(--teal);background:var(--blanco);color:var(--teal);font-weight:800;border-radius:20px;padding:5px 13px;font-size:13px;cursor:pointer;line-height:1.5;font-family:inherit}
+.langbtns button.on{background:var(--teal);color:#fff}
+/* ===== hero ===== */
+.hero{position:relative}
+.hero img{width:100%;height:340px;object-fit:cover}
+.hero .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,101,95,.05) 30%,rgba(59,47,42,.72) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:26px 20px;color:#fff}
+.hero h1{font-size:32px;line-height:1.15;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.hero h1 .hl{color:#FFD98A}
+.rating{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.94);color:var(--choco);border-radius:24px;padding:6px 14px;font-size:14px;font-weight:700;margin:12px 0;width:fit-content}
+.cta-row{display:flex;gap:10px;margin-top:6px}
+.btn{display:inline-block;text-decoration:none;font-weight:800;border-radius:30px;padding:13px 22px;font-size:16px;text-align:center}
+.btn-terra{background:var(--terra);color:#fff;box-shadow:0 4px 14px rgba(217,108,74,.45)}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 4px 14px rgba(20,101,95,.4)}
+.btn-blanco{background:#fff;color:var(--teal);border:2px solid var(--teal)}
+/* ===== sections ===== */
+section{padding:30px 20px}
+.sec-title{font-size:24px;color:var(--teal);margin-bottom:4px;display:flex;align-items:center;gap:9px}
+.sec-sub{color:#8a7a70;font-size:14px;margin-bottom:18px}
+/* ===== services ===== */
+.svc-grid{display:grid;gap:12px}
+.svc-card{background:#fff;border-radius:18px;padding:16px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px rgba(59,47,42,.08);border-left:6px solid var(--terra)}
+.svc-card .ic{font-size:34px;flex:0 0 46px;text-align:center}
+.svc-card .tx{flex:1}
+.svc-card .tx b{font-size:16px;color:var(--choco)}
+.svc-card .tx span{display:block;font-size:13px;color:#8a7a70}
+.svc-card .go{flex:0 0 auto;background:var(--teal);color:#fff;text-decoration:none;font-weight:800;font-size:14px;border-radius:22px;padding:10px 16px}
+/* ===== booking ===== */
+#reservar{background:linear-gradient(180deg,#FFF3E6,#FFE8D2);border-radius:26px;margin:0 12px;padding:26px 18px}
+.bk-steps{display:flex;gap:6px;margin-bottom:16px}
+.bk-steps div{flex:1;height:7px;border-radius:4px;background:#e8d9c8}
+.bk-steps div.on{background:var(--terra)}
+.bk-panel{display:none}
+.bk-panel.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.pick{display:flex;flex-wrap:wrap;gap:9px;margin:10px 0}
+.pick button{border:2px solid var(--terra);background:#fff;color:var(--choco);border-radius:16px;padding:10px 14px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.pick button.sel{background:var(--terra);color:#fff}
+.bk-nav{display:flex;justify-content:space-between;margin-top:16px}
+.bk-nav button{border:none;border-radius:24px;padding:12px 22px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;line-height:1.4}
+.bk-back{background:#e8d9c8;color:var(--choco)}
+.bk-next{background:var(--teal);color:#fff}
+.bk-field{margin:10px 0}
+.bk-field label{display:block;font-weight:700;font-size:14px;margin-bottom:5px}
+.bk-field input{width:100%;border:2px solid #e8d9c8;border-radius:14px;padding:12px;font-size:16px;font-family:inherit;background:#fff}
+.bk-ok{background:#fff;border-radius:18px;padding:22px;text-align:center;box-shadow:0 3px 12px rgba(59,47,42,.1)}
+.bk-ok .big{font-size:52px}
+.bk-ok h3{color:var(--teal);margin:8px 0}
+.bk-note{font-size:12px;color:#8a7a70;margin-top:12px}
+/* ===== about ===== */
+.about{background:#fff;border-radius:26px;margin:0 12px;box-shadow:0 3px 14px rgba(59,47,42,.07)}
+.about p{margin-bottom:12px}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.gal img{border-radius:16px;height:150px;object-fit:cover;width:100%}
+.muestra{font-size:11px;color:#a08e82;text-align:center;margin-top:6px}
+/* ===== reviews ===== */
+.rev{background:#fff;border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 3px 12px rgba(59,47,42,.08)}
+.rev .stars{color:var(--dorado);font-size:17px;letter-spacing:2px}
+.rev p{font-size:14px;font-style:italic;margin:6px 0}
+.rev .who{font-size:12px;color:#8a7a70;font-weight:700}
+.qrbox{display:flex;gap:16px;align-items:center;background:#fff;border-radius:18px;padding:16px;margin-top:14px;box-shadow:0 3px 12px rgba(59,47,42,.08)}
+.qrbox img{width:110px;height:110px;border-radius:10px}
+/* ===== visit ===== */
+.hours{width:100%;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 12px rgba(59,47,42,.08);font-size:14px}
+.hours td{padding:10px 14px;border-bottom:1px solid #f3e9dc}
+.hours tr:last-child td{border-bottom:none}
+.hours td:last-child{text-align:right;font-weight:700}
+.hours tr.closed td{color:#b09a8a}
+.addr{background:var(--teal);color:#fff;border-radius:18px;padding:18px;margin-top:14px;font-size:15px}
+.addr a{color:#FFD98A;font-weight:800}
+/* ===== footer ===== */
+footer{background:var(--choco);color:#e8d9c8;text-align:center;padding:26px 20px;font-size:13px}
+footer .demo{font-size:11px;opacity:.7;margin-top:8px}
+.paw-bg{font-size:15px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="#D96C4A"><ellipse cx="12" cy="15.5" rx="4.4" ry="3.6"/><ellipse cx="5.6" cy="10" rx="2" ry="2.6"/><ellipse cx="9.4" cy="6.8" rx="2" ry="2.6"/><ellipse cx="14.6" cy="6.8" rx="2" ry="2.6"/><ellipse cx="18.4" cy="10" rx="2" ry="2.6"/></svg>
+    <span>Carrollwood Pet Grooming</span>
+  </div>
+  <div class="langbtns">
+    <button id="btnEs" class="on" onclick="setLang('es')">ES</button>
+    <button id="btnEn" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="imgs/hero.webp" alt="Perro feliz recién bañado">
+  <div class="ov">
+    <h1><span data-es="El cuidado que tu mascota" data-en="The care your pet">El cuidado que tu mascota</span> <span class="hl" data-es="merece" data-en="deserves">merece</span> 🐾</h1>
+    <div class="rating">⭐ 5.0 · <span data-es="37 reseñas en Google" data-en="37 Google reviews">37 reseñas en Google</span></div>
+    <div class="cta-row">
+      <a class="btn btn-terra" href="tel:+18132690548" data-es="📞 Llamar" data-en="📞 Call">📞 Llamar</a>
+      <a class="btn btn-teal" href="https://maps.app.goo.gl/PahtrHeaDJU3Qge6A" target="_blank" rel="noopener" data-es="📍 Cómo llegar" data-en="📍 Directions">📍 Cómo llegar</a>
+    </div>
+  </div>
+</div>
+
+<section id="servicios">
+  <h2 class="sec-title">✂️ <span data-es="Nuestros servicios" data-en="Our services">Nuestros servicios</span></h2>
+  <p class="sec-sub" data-es="Toca un servicio para reservarlo. Duraciones de ejemplo." data-en="Tap a service to book it. Sample durations.">Toca un servicio para reservarlo. Duraciones de ejemplo.</p>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="ic">🛁</div><div class="tx"><b data-es="Baño completo" data-en="Full bath">Baño completo</b><span>⏱ ~45 min <i style="font-style:normal" data-es="(ejemplo)" data-en="(sample)">(ejemplo)</i></span></div><a class="go" href="#reservar" onclick="pickSvc(0)" data-es="Reservar →" data-en="Book →">Reservar →</a></div>
+    <div class="svc-card"><div class="ic">🐩</div><div class="tx"><b data-es="Corte completo" data-en="Full groom">Corte completo</b><span>⏱ ~1.5 h <i style="font-style:normal" data-es="(ejemplo)" data-en="(sample)">(ejemplo)</i></span></div><a class="go" href="#reservar" onclick="pickSvc(1)" data-es="Reservar →" data-en="Book →">Reservar →</a></div>
+    <div class="svc-card"><div class="ic">✨</div><div class="tx"><b data-es="Baño y corte" data-en="Bath & haircut">Baño y corte</b><span>⏱ ~2 h <i style="font-style:normal" data-es="(ejemplo)" data-en="(sample)">(ejemplo)</i></span></div><a class="go" href="#reservar" onclick="pickSvc(2)" data-es="Reservar →" data-en="Book →">Reservar →</a></div>
+    <div class="svc-card"><div class="ic">💅</div><div class="tx"><b data-es="Corte de uñas" data-en="Nail trim">Corte de uñas</b><span>⏱ ~20 min <i style="font-style:normal" data-es="(ejemplo)" data-en="(sample)">(ejemplo)</i></span></div><a class="go" href="#reservar" onclick="pickSvc(3)" data-es="Reservar →" data-en="Book →">Reservar →</a></div>
+    <div class="svc-card"><div class="ic">👂</div><div class="tx"><b data-es="Limpieza de oídos" data-en="Ear cleaning">Limpieza de oídos</b><span>⏱ ~15 min <i style="font-style:normal" data-es="(ejemplo)" data-en="(sample)">(ejemplo)</i></span></div><a class="go" href="#reservar" onclick="pickSvc(4)" data-es="Reservar →" data-en="Book →">Reservar →</a></div>
+    <div class="svc-card"><div class="ic">🐱</div><div class="tx"><b data-es="Cuidado felino" data-en="Cat grooming">Cuidado felino</b><span>⏱ ~1 h <i style="font-style:normal" data-es="(ejemplo)" data-en="(sample)">(ejemplo)</i></span></div><a class="go" href="#reservar" onclick="pickSvc(5)" data-es="Reservar →" data-en="Book →">Reservar →</a></div>
+  </div>
+</section>
+
+<section id="reservar">
+  <h2 class="sec-title">📅 <span data-es="Reserva tu cita" data-en="Book your appointment">Reserva tu cita</span></h2>
+  <p class="sec-sub" data-es="Elige servicio, día y hora. Confirmación inmediata." data-en="Pick a service, day and time. Instant confirmation.">Elige servicio, día y hora. Confirmación inmediata.</p>
+  <div class="bk-steps"><div id="st1" class="on"></div><div id="st2"></div><div id="st3"></div><div id="st4"></div></div>
+
+  <div class="bk-panel on" id="p1">
+    <b data-es="1. Elige el servicio" data-en="1. Choose a service">1. Elige el servicio</b>
+    <div class="pick" id="svcPick"></div>
+    <div class="bk-nav"><span></span><button class="bk-next" onclick="goStep(2)" data-es="Siguiente →" data-en="Next →">Siguiente →</button></div>
+  </div>
+
+  <div class="bk-panel" id="p2">
+    <b data-es="2. Elige el día" data-en="2. Choose a day">2. Elige el día</b>
+    <div class="pick" id="dayPick"></div>
+    <div class="bk-nav"><button class="bk-back" onclick="goStep(1)" data-es="← Atrás" data-en="← Back">← Atrás</button><button class="bk-next" onclick="goStep(3)" data-es="Siguiente →" data-en="Next →">Siguiente →</button></div>
+  </div>
+
+  <div class="bk-panel" id="p3">
+    <b data-es="3. Elige la hora" data-en="3. Choose a time">3. Elige la hora</b>
+    <div class="pick" id="timePick"></div>
+    <div class="bk-nav"><button class="bk-back" onclick="goStep(2)" data-es="← Atrás" data-en="← Back">← Atrás</button><button class="bk-next" onclick="goStep(4)" data-es="Siguiente →" data-en="Next →">Siguiente →</button></div>
+  </div>
+
+  <div class="bk-panel" id="p4">
+    <b data-es="4. Tus datos" data-en="4. Your info">4. Tus datos</b>
+    <div class="bk-field"><label data-es="Nombre" data-en="Name">Nombre</label><input id="fName" type="text" placeholder="Tu nombre / Your name"></div>
+    <div class="bk-field"><label data-es="Teléfono" data-en="Phone">Teléfono</label><input id="fPhone" type="tel" placeholder="(813) 000-0000"></div>
+    <div class="bk-field"><label data-es="Nombre de tu mascota" data-en="Your pet's name">Nombre de tu mascota</label><input id="fPet" type="text" placeholder="Firulais 🐶"></div>
+    <div class="bk-nav"><button class="bk-back" onclick="goStep(3)" data-es="← Atrás" data-en="← Back">← Atrás</button><button class="bk-next" onclick="confirmBk()" data-es="Confirmar ✓" data-en="Confirm ✓">Confirmar ✓</button></div>
+  </div>
+
+  <div class="bk-panel" id="p5">
+    <div class="bk-ok">
+      <div class="big">🎉</div>
+      <h3 data-es="¡Cita reservada!" data-en="Appointment booked!">¡Cita reservada!</h3>
+      <p id="bkSummary" style="font-size:15px"></p>
+      <p class="bk-note" data-es="Te llamaremos para confirmar los detalles. Página de demostración: esta reserva no se guarda." data-en="We'll call you to confirm the details. Demo page: this booking is not saved.">Te llamaremos para confirmar los detalles. Página de demostración: esta reserva no se guarda.</p>
+      <div class="bk-nav" style="justify-content:center"><button class="bk-back" onclick="goStep(1)" data-es="Nueva reserva" data-en="New booking">Nueva reserva</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="nosotros" style="padding:30px 20px">
+  <h2 class="sec-title">💛 <span data-es="Conócenos" data-en="Meet us">Conócenos</span></h2>
+  <p data-es="En Carrollwood Pet Grooming tratamos a cada mascota como familia. Nuestra groomer Sarah es reconocida por su trato amable y paciente, especialmente con perritos rescatados y gatitos nerviosos." data-en="At Carrollwood Pet Grooming we treat every pet like family. Our groomer Sarah is known for her gentle, patient touch — especially with rescue pups and nervous kitties.">En Carrollwood Pet Grooming tratamos a cada mascota como familia. Nuestra groomer Sarah es reconocida por su trato amable y paciente, especialmente con perritos rescatados y gatitos nerviosos.</p>
+  <p data-es="Atendemos perros y gatos de razas pequeñas y medianas, en un ambiente tranquilo y sin estrés." data-en="We groom small and medium breed dogs and cats in a calm, stress-free environment.">Atendemos perros y gatos de razas pequeñas y medianas, en un ambiente tranquilo y sin estrés.</p>
+  <div class="gal">
+    <img src="imgs/galeria1.webp" alt="Perrito en el baño">
+    <img src="imgs/galeria2.webp" alt="Gatito en peluquería">
+  </div>
+  <p class="muestra" data-es="Fotos de muestra" data-en="Sample photos">Fotos de muestra</p>
+</section>
+
+<section id="resenas">
+  <h2 class="sec-title">⭐ <span data-es="Lo que dicen nuestros clientes" data-en="What our clients say">Lo que dicen nuestros clientes</span></h2>
+  <p class="sec-sub"><span data-es="5.0 de 5 en Google · 37 reseñas" data-en="5.0 out of 5 on Google · 37 reviews">5.0 de 5 en Google · 37 reseñas</span></p>
+  <div class="rev"><div class="stars">★★★★★</div><p data-es="«Una señora súper amable: cuidó a nuestro perrito perdido y hasta lo bañó. ¡Lugar encantador, lo recomiendo!»" data-en="“Super nice lady: she kept our lost dog safe and even gave him a bath. Lovely place, I recommend it!”">«Una señora súper amable: cuidó a nuestro perrito perdido y hasta lo bañó. ¡Lugar encantador, lo recomiendo!»</p><div class="who">— Google, oct 2025</div></div>
+  <div class="rev"><div class="stars">★★★★★</div><p data-es="«Es la peluquera de mi perrita desde hace 5 años. ¡Siempre la deja hermosa!»" data-en="“She's been my dog's groomer for 5 years. She always makes her look beautiful!”">«Es la peluquera de mi perrita desde hace 5 años. ¡Siempre la deja hermosa!»</p><div class="who">— Google, ago 2025</div></div>
+  <div class="rev"><div class="stars">★★★★★</div><p data-es="«Sarah hizo un trabajo fenomenal con mi gata. Con mucha experiencia. ¡La recomiendo!»" data-en="“Sarah did a phenomenal job on my cat. Very experienced. Highly recommend!”">«Sarah hizo un trabajo fenomenal con mi gata. Con mucha experiencia. ¡La recomiendo!»</p><div class="who">— Google, mar 2024</div></div>
+  <div class="qrbox">
+    <img src="qr/resena.png" alt="QR déjanos tu reseña">
+    <div><b data-es="¿Ya nos visitaste? ¡Déjanos tu reseña!" data-en="Visited us? Leave us a review!">¿Ya nos visitaste? ¡Déjanos tu reseña!</b><br><span style="font-size:13px;color:#8a7a70" data-es="Escanea el código con tu teléfono" data-en="Scan the code with your phone">Escanea el código con tu teléfono</span></div>
+  </div>
+</section>
+
+<section id="visitanos">
+  <h2 class="sec-title">📍 <span data-es="Visítanos" data-en="Visit us">Visítanos</span></h2>
+  <div class="qrbox">
+    <img src="qr/ubicacion.png" alt="QR de ubicación">
+    <div><b>4431 Gunn Hwy, Tampa, FL 33618</b><br><a href="https://maps.app.goo.gl/PahtrHeaDJU3Qge6A" target="_blank" rel="noopener" style="color:var(--terra);font-weight:800" data-es="Abrir en Google Maps →" data-en="Open in Google Maps →">Abrir en Google Maps →</a></div>
+  </div>
+  <div style="height:14px"></div>
+  <table class="hours">
+    <tr><td data-es="Lunes" data-en="Monday">Lunes</td><td data-es="Cerrado" data-en="Closed">Cerrado</td></tr>
+    <tr><td data-es="Martes" data-en="Tuesday">Martes</td><td>8:00 AM – 2:00 PM</td></tr>
+    <tr><td data-es="Miércoles" data-en="Wednesday">Miércoles</td><td>8:30 AM – 5:00 PM</td></tr>
+    <tr><td data-es="Jueves" data-en="Thursday">Jueves</td><td>8:00 AM – 5:00 PM</td></tr>
+    <tr><td data-es="Viernes" data-en="Friday">Viernes</td><td>8:00 AM – 5:00 PM</td></tr>
+    <tr><td data-es="Sábado" data-en="Saturday">Sábado</td><td>8:30 AM – 5:00 PM</td></tr>
+    <tr class="closed"><td data-es="Domingo" data-en="Sunday">Domingo</td><td data-es="Cerrado" data-en="Closed">Cerrado</td></tr>
+  </table>
+  <div class="addr">📞 <a href="tel:+18132690548">(813) 269-0548</a><br><span style="font-size:13px" data-es="Llámanos para agendar tu cita" data-en="Call us to book your appointment">Llámanos para agendar tu cita</span></div>
+  <div style="text-align:center;margin-top:18px"><a class="btn btn-terra" href="#reservar" data-es="📅 Reservar mi cita" data-en="📅 Book my appointment">📅 Reservar mi cita</a></div>
+</section>
+
+<footer>
+  <div class="paw-bg">🐾 Carrollwood Pet Grooming 🐾</div>
+  <div>4431 Gunn Hwy, Tampa, FL 33618 · (813) 269-0548</div>
+  <div class="demo" data-es="Página de demostración — reserva de muestra, no se guarda información." data-en="Demo page — sample booking, no information is saved.">Página de demostración — reserva de muestra, no se guarda información.</div>
+</footer>
+
+<script>
+var LANG = localStorage.getItem('cpg_lang') || 'es';
+var SVCS = [
+  {es:'Baño completo', en:'Full bath'},
+  {es:'Corte completo', en:'Full groom'},
+  {es:'Baño y corte', en:'Bath & haircut'},
+  {es:'Corte de uñas', en:'Nail trim'},
+  {es:'Limpieza de oídos', en:'Ear cleaning'},
+  {es:'Cuidado felino', en:'Cat grooming'}
+];
+var TIMES = ['9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM'];
+var bk = {svc:0, day:null, time:null};
+var DIAS_ES = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+var DIAS_EN = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+var MESES_ES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+var MESES_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function setLang(l){
+  LANG = l; localStorage.setItem('cpg_lang', l);
+  document.documentElement.lang = l;
+  document.getElementById('btnEs').classList.toggle('on', l==='es');
+  document.getElementById('btnEn').classList.toggle('on', l==='en');
+  document.querySelectorAll('[data-es]').forEach(function(el){
+    el.innerHTML = (l==='es') ? el.getAttribute('data-es') : el.getAttribute('data-en');
+  });
+  renderSvc(); renderDays(); renderTimes();
+}
+function svcName(i){ return LANG==='es' ? SVCS[i].es : SVCS[i].en; }
+function renderSvc(){
+  var box = document.getElementById('svcPick'); box.innerHTML='';
+  SVCS.forEach(function(s,i){
+    var b=document.createElement('button'); b.type='button';
+    b.textContent = LANG==='es'?s.es:s.en;
+    if(i===bk.svc) b.classList.add('sel');
+    b.onclick=function(){ bk.svc=i; renderSvc(); };
+    box.appendChild(b);
+  });
+}
+function renderDays(){
+  var box=document.getElementById('dayPick'); box.innerHTML='';
+  var d=new Date(); var added=0;
+  while(added<10){
+    d.setDate(d.getDate()+1);
+    var dow=d.getDay();
+    if(dow===0||dow===1) continue; /* dom y lun cerrado */
+    (function(dd){
+      var b=document.createElement('button'); b.type='button';
+      var lbl=(LANG==='es'?DIAS_ES[dd.getDay()]:DIAS_EN[dd.getDay()])+' '+(LANG==='es'?MESES_ES[dd.getMonth()]:MESES_EN[dd.getMonth()])+' '+dd.getDate();
+      b.textContent=lbl;
+      if(bk.day && dd.getTime()===bk.day.getTime()) b.classList.add('sel');
+      b.onclick=function(){ bk.day=new Date(dd); renderDays(); };
+      box.appendChild(b);
+    })(new Date(d));
+    added++;
+  }
+}
+function renderTimes(){
+  var box=document.getElementById('timePick'); box.innerHTML='';
+  TIMES.forEach(function(t){
+    var b=document.createElement('button'); b.type='button'; b.textContent=t;
+    if(bk.time===t) b.classList.add('sel');
+    b.onclick=function(){ bk.time=t; renderTimes(); };
+    box.appendChild(b);
+  });
+}
+function pickSvc(i){ bk.svc=i; renderSvc(); }
+function goStep(n){
+  if(n===2 && bk.svc==null) bk.svc=0;
+  [1,2,3,4,5].forEach(function(i){
+    document.getElementById('p'+i).classList.toggle('on', i===n);
+    var st=document.getElementById('st'+i); if(st) st.classList.toggle('on', i<=n);
+  });
+  document.getElementById('reservar').scrollIntoView({behavior:'smooth'});
+}
+function confirmBk(){
+  var name=document.getElementById('fName').value.trim();
+  var phone=document.getElementById('fPhone').value.trim();
+  var pet=document.getElementById('fPet').value.trim();
+  if(!name || !phone){
+    alert(LANG==='es' ? 'Por favor escribe tu nombre y teléfono.' : 'Please enter your name and phone.');
+    return;
+  }
+  var dstr = bk.day ? ((LANG==='es'?DIAS_ES[bk.day.getDay()]:DIAS_EN[bk.day.getDay()])+' '+(LANG==='es'?MESES_ES[bk.day.getMonth()]:MESES_EN[bk.day.getMonth()])+' '+bk.day.getDate()) : (LANG==='es'?'Por confirmar':'To confirm');
+  var tstr = bk.time || (LANG==='es'?'Por confirmar':'To confirm');
+  document.getElementById('bkSummary').innerHTML =
+    '<b>'+svcName(bk.svc)+'</b><br>📅 '+dstr+' · 🕐 '+tstr+'<br>🐾 '+(pet||'—')+' · 👤 '+name;
+  goStep(5);
+}
+setLang(LANG);
+</script>
+</body>
+</html>
